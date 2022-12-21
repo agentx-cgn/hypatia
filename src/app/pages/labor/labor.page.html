@@ -1,0 +1,31 @@
+<div class="drv-row">
+  <div class="drv-col">
+    <!-- 
+      <button style="width: 25%; display: inline; background-color: #DDD;" (click)="changeLocale('de')">DE</button>
+      <button style="width: 25%; display: inline; background-color: #DDD;" (click)="changeLocale('en')">EN</button> 
+    -->
+    <button style="width: 25%; display: inline; background-color: #DDD;" (click)="changeCounter(+1)">+1</button>
+    <button style="width: 25%; display: inline; background-color: #DDD;" (click)="changeCounter(-1)">-1</button>
+    <h2>
+      <br />
+      TestComponent: {{ testtitle }}<br />
+      TestTemplate: <span i18n="@@app.label">Default Label</span><br />
+      <!-- TestICU: <span i18n="@@app.test.icu">ICU</span><br /> -->
+      TestDate: {{ now | date:'full' }} <br />
+      TestNumber: {{ 123_456_789.87 | number }} <br />
+      TestDollars: {{ 987_654_321.12 | currency }} <br /><br />
+      TestCounter: <span i18n="@@app.counter"></span> {{ counter }} <br />
+      <ng-container [ngPlural]="counter">
+        <ng-template ngPluralCase="=0">
+          <span i18n="@@app.plural.zero">XX</span>
+        </ng-template>
+        <ng-template ngPluralCase="=1">
+          <span i18n="@@app.plural.one">YY</span>
+        </ng-template>
+        <ng-template ngPluralCase="other">
+          <span i18n="@@app.plural.other">ZZ</span>
+        </ng-template>
+      </ng-container>
+    </h2>
+  </div>
+</div>

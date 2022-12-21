@@ -1,0 +1,7 @@
+{
+    "defaultLocale": "de",
+    "availableLocale": ["de", "en"],
+    "pages": ["start", "ergebnis", "qualitaet", "hilfe", "detail", "pagenotfound", "labor"],
+    "defaultPage": "start",
+    "errorPage": "pagenotfound"
+}

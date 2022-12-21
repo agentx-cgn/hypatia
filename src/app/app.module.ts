@@ -1,18 +1,62 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title  } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { APP_INITIALIZER, NgModule, LOCALE_ID } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+// import { ScrollingModule } from '@angular/cdk/scrolling';
+
+import { I18n, II18n } from '@hypatia/core/i18n.module';
+import { AtomsModule } from '@hypatia/atoms/atoms.module';
+import { CellsModule } from '@hypatia/cells/cells.module';
+
+// import { HeaderCell } from '@hypatia/cells/header/header.cell';
+// import { FooterCell } from '@hypatia/cells/footer/footer.cell';
+
+import { StartPage } from '@hypatia/pages/start/start.page';
+import { NotfoundPage } from '@hypatia/pages/notfound/notfound.page';
+import { LaborPage } from '@hypatia/pages/labor/labor.page';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// import { PipesModule } from '@hypatia/core/pipe.modules';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // HeaderCell,
+    // FooterCell,
+    StartPage,
+    NotfoundPage,
+    LaborPage,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    AtomsModule,
+    CellsModule,
   ],
-  providers: [],
+  providers: [
+
+    // page title service
+    Title,
+
+    // Lokalisierung
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (i18n: II18n) => () => i18n.setLocale(),
+      deps: [I18n],
+      multi: true,
+    },
+    {
+      provide: LOCALE_ID,
+      useFactory: (i18n: I18n) => i18n.locale,
+      deps: [I18n],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
