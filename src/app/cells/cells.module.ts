@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+import { MaterialModule } from '@hypatia/core/material.module';
+
 import { AtomsModule } from '@hypatia/atoms/atoms.module';
 import { HeaderCell } from './header/header.cell';
 import { FooterCell } from './footer/footer.cell';
@@ -17,6 +19,7 @@ import { FooterCell } from './footer/footer.cell';
     FormsModule,
     AtomsModule,
     ScrollingModule,
+    MaterialModule,
   ],
   exports: [
     HeaderCell,

@@ -3,14 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_INITIALIZER, NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { I18n, II18n } from '@hypatia/core/i18n.module';
 import { AtomsModule } from '@hypatia/atoms/atoms.module';
 import { CellsModule } from '@hypatia/cells/cells.module';
-
-// import { HeaderCell } from '@hypatia/cells/header/header.cell';
-// import { FooterCell } from '@hypatia/cells/footer/footer.cell';
 
 import { StartPage } from '@hypatia/pages/start/start.page';
 import { NotfoundPage } from '@hypatia/pages/notfound/notfound.page';
@@ -24,8 +20,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // HeaderCell,
-    // FooterCell,
     StartPage,
     NotfoundPage,
     LaborPage,
@@ -38,6 +32,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     AtomsModule,
     CellsModule,
+    // MatToolbarModule,
+    // MatIconModule
   ],
   providers: [
 
