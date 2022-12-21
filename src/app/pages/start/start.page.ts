@@ -16,7 +16,6 @@ export class StartPage implements OnInit, OnDestroy {
 
   private readonly routeSubscription: Subscription | undefined;
 
-
   public trans = {
     search_button_label:  $localize`:@@page.start.search.button.label:`,
   };

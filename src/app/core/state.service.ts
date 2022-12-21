@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Params } from '@angular/router';
+// import { Params } from '@angular/router';
 
 export interface IState {
   id_fagrp?:  string    // Filter, FASC Gruppe

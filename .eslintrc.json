@@ -1,0 +1,50 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "standard-with-typescript",
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "extends": [
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking"
+            ],
+
+            "parserOptions": {
+                "project": "tsconfig.json",
+                "tsconfigRootDir": "."
+            }
+        }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "@typescript-eslint/semi": "off",
+        "padded-blocks": "off",
+        "no-multi-spaces": "off",
+        "space-in-parens": "off",
+        "@typescript-eslint/no-useless-constructor": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@angular-eslint/no-empty-lifecycle-method": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "object-property-newline": "off",
+        "object-curly-newline": "off",
+        "@typescript-eslint/promise-function-async": "off",
+        "key-spacing": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "@typescript-eslint/indent": "off",
+        "multiline-ternary": "off",
+        "typescript-eslint/no-throw-literal": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off"
+    }
+
+}

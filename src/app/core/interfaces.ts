@@ -50,7 +50,6 @@ export interface IAPIResponse<T> {
   data:     T // siehe TAPIData,
 }
 
-
 export interface IQueryParams {
   lang?:      string
   id_fagrp?:  string    // FASC Gruppe
@@ -70,4 +69,3 @@ export interface IState extends Omit<IQueryParams, 'merkmale' | 'umkreis' | 'pag
   page?:      number
   length?:    number
 }
-

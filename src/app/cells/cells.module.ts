@@ -7,7 +7,6 @@ import { AtomsModule } from '@hypatia/atoms/atoms.module';
 import { HeaderCell } from './header/header.cell';
 import { FooterCell } from './footer/footer.cell';
 
-
 @NgModule({
   declarations: [
     HeaderCell,

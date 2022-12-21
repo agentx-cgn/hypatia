@@ -10,7 +10,6 @@ import { APP_CONFIG } from '@hypatia/core/injection-tokens';
 import { IAPIResponse, IConfig, ITokens } from '@hypatia/core/interfaces';
 import { firstValueFrom } from 'rxjs';
 
-
 const DEBUG = false;
 
 export interface II18n {

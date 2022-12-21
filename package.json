@@ -8,7 +8,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:data": "nodemon ./src/app/express/index.mjs"
+    "serve:data": "nodemon ./src/app/express/index.mjs",
+    "analyze": "webpack-bundle-analyzer dist/pr-frontend/stats.json",
+    "check:tsc": "tsc --project ./tsconfig.app.json --noemit",
+    "check:lint": "eslint --ext ts src"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +45,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "nodemon": "^2.0.20",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "eslint": "8.27.0",
+    "eslint-config-standard-with-typescript": "23.0.0",
+    "eslint-plugin-import": "2.26.0"
   }
 }

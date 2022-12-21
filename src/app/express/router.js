@@ -2,17 +2,15 @@
 import express from 'express'
 
 import config from '../src/assets/config.json' assert {type: 'json'}
-import package_json from './../../package.json' assert {type: 'json'}
-
+import packageJson from './../../package.json' assert {type: 'json'}
 
 async function prepContainer () {
 
   return {
-    version: package_json.version
+    version: packageJson.version
   }
 
 }
-
 
 class Controller {
 
@@ -23,8 +21,6 @@ class Controller {
     return res.json(container)
   }
 }
-  
-
 
 const router = express.Router()
 const controller = new Controller()

@@ -37,20 +37,7 @@ export class HeaderCell implements OnInit {
   }
 
   updateLinks (): void {
-
-    this.logoLink = `/${this.i18n.locale}/start`;
-
-    const path2 = location.pathname.split('/').filter(Boolean).slice(1, 2)[0];
-
-    const menuText = (locale: string): string => {
-      // TODO: This is so wrong
-      return (
-        locale === 'de' ? $localize`:@@app.locale.de.long:` :
-        locale === 'en' ? $localize`:@@app.locale.en.long:` :
-        'unknown'
-      );
-    }
-
+    // do nothing
   }
 
   btnClick (): void {
