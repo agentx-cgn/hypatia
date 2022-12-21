@@ -1,6 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { APP_CONFIG } from '@hypatia/core/injection-tokens';
 import { IConfig } from '@hypatia/core/interfaces';
+
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +15,13 @@ export class AppComponent {
   public routeLanguage: string | null = null;
   public userLanguage: string | null = null;
 
+  public opened = true;
+
   private readonly config: IConfig;
 
   // public title = 'hy-frontend';
+
+  @ViewChild('sidenav') sidenav: MatSidenav | undefined;
 
   constructor (
     @Inject(APP_CONFIG) config: IConfig
@@ -25,6 +31,11 @@ export class AppComponent {
 
   ngOnInit (): void {
     // do nothing
+  }
+
+  toggle (): void {
+    console.log('toggle')
+    void this.sidenav?.toggle();
   }
 
 }

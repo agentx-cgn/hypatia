@@ -120,15 +120,15 @@ export class I18n {
     // loadTranslations((await localeTranslationsModule).default);
 
     const endpoint = `${environment.apiroot}/tokens`;
-    const promise = this.http.get(endpoint, { params: { lang: this.locale } }).toPromise() as Promise<IAPIResponse<Record<string, string>>>;
+    // const promise = this.http.get(endpoint, { params: { lang: this.locale } }).toPromise() as Promise<IAPIResponse<Record<string, string>>>;
     // const source$ = this.http.get<IAPIResponse<Record<string, string>>>(endpoint, { params: { lang: this.locale } });
 
     try {
-      const tokens = (await promise).data;
+      // const tokens = (await promise).data;
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       // const tokens: Record<string, string> = (await firstValueFrom(source$, { defaultValue: {} })).data;
-      DEBUG && console.debug('i18n', this.locale, JSON.parse(JSON.stringify(tokens)));
-      loadTranslations( tokens  );
+      // DEBUG && console.debug('i18n', this.locale, JSON.parse(JSON.stringify(tokens)));
+      // loadTranslations( tokens  );
 
     } catch (error) {
       loadTranslations( {} );

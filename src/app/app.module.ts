@@ -4,6 +4,8 @@ import { APP_INITIALIZER, NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MaterialModule } from '@hypatia/core/material.module';
+
 import { I18n, II18n } from '@hypatia/core/i18n.module';
 import { AtomsModule } from '@hypatia/atoms/atoms.module';
 import { CellsModule } from '@hypatia/cells/cells.module';
@@ -32,8 +34,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     AtomsModule,
     CellsModule,
-    // MatToolbarModule,
-    // MatIconModule
+    MaterialModule,
   ],
   providers: [
 
