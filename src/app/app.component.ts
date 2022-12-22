@@ -19,7 +19,7 @@ export class AppComponent {
 
   private readonly config: IConfig;
 
-  // public title = 'hy-frontend';
+  // public title = 'hyp-frontend';
 
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
 

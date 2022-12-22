@@ -3,7 +3,7 @@ import { I18n } from '@hypatia/core/i18n.module';
 import { StateService } from '@hypatia/core/state.service';
 
 @Component({
-  selector: 'hy-page-notfound',
+  selector: 'hyp-page-notfound',
   templateUrl: './notfound.page.html',
   styleUrls: ['./notfound.page.scss']
 })

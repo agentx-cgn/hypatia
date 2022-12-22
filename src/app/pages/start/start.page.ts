@@ -8,7 +8,7 @@ import { I18n } from '@hypatia/core/i18n.module';
 import { StateService } from '@hypatia/core/state.service';
 
 @Component({
-  selector: 'hy-page-start',
+  selector: 'hyp-page-start',
   templateUrl: './start.page.html',
   styleUrls: ['./start.page.scss']
 })

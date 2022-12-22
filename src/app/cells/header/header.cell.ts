@@ -6,7 +6,7 @@ import { I18n } from '@hypatia/core/i18n.module';
 import { filter, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'hy-cell-header',
+  selector: 'hyp-cell-header',
   templateUrl: './header.cell.html',
   styleUrls: ['./header.cell.scss'],
 })

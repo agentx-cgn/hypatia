@@ -4,7 +4,7 @@ import { I18n } from '@hypatia/core/i18n.module';
 // import * as adodb from 'node-adodb';
 
 @Component({
-  selector: 'hy-page-labor',
+  selector: 'hyp-page-labor',
   templateUrl: './labor.page.html',
   styleUrls: ['./labor.page.scss']
 })
@@ -33,7 +33,7 @@ export class LaborPage implements OnInit {
   }
 
   async selectMDB (): Promise<void> {
-    // const dbFile = './src/assets/data/hy-frontend.mdb'
+    // const dbFile = './src/assets/data/hyp-frontend.mdb'
     // const connection = adodb.open(`Provider=Microsoft.Jet.OLEDB.4.0;Data Source=${dbFile};`)
     // const sql = 'SELECT * FROM pr_lokalisierung ORDER BY token, sprache;'
     // const data = await connection.query(sql)

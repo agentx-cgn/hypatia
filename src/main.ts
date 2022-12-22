@@ -1,6 +1,10 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+// import { VERSION as CDK_VERSION } from '@angular';
+import { VERSION as CDK_VERSION } from '@angular/cdk';
+import { VERSION as MAT_VERSION } from '@angular/material/core';
+
 import { environment } from './environments/environment';
 import packageJson from '../package.json';
 import configJson from './assets/config.json';
@@ -12,7 +16,7 @@ import { IConfig } from './app/core/interfaces';
 const version = packageJson.version;
 const envname = environment.name;
 
-console.debug('%cHypatia', 'color: darkgreen; font-weight: 800', envname, version);
+console.debug('%cHypatia', 'color: darkgreen; font-weight: 800', envname, version, CDK_VERSION.full, MAT_VERSION.full);
 console.debug('Environment', environment);
 
 // https://offering.solutions/blog/articles/2021/11/11/loading-configuration-before-your-angular-app-starts/

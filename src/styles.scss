@@ -13,3 +13,17 @@ html, body {
     background-color: transparent;
     font-size: 16px;
 }
+
+div.page {
+    height: 100%;
+    padding: 1rem;
+    &.page-start {
+        background-color: rgb(243, 228, 210);
+    }
+    &.page-labor {
+        background-color: rgb(172, 229, 222);
+    }
+    &.page-notfound {
+        background-color: rgb(195, 195, 224);
+    }
+}
