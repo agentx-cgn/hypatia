@@ -3,7 +3,7 @@ import { APP_CONFIG } from '@hypatia/core/injection-tokens';
 import { IConfig } from '@hypatia/core/interfaces';
 import { DOCUMENT } from '@angular/common';
 
-import { NgxFullscreenDirective, NgxFullscreenTransition } from '@ultimate/ngx-fullscreen';
+import { NgxFullscreenDirective } from '@ultimate/ngx-fullscreen';
 
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -21,7 +21,6 @@ export class AppComponent implements AfterViewInit {
   public userLanguage: string | null = null;
 
   public opened = true;
-  // private isFullscreen = false;
 
   private readonly config: IConfig;
 

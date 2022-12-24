@@ -23,8 +23,8 @@
           <mat-icon>autorenew</mat-icon>
       </button>
       <button mat-icon-button aria-label="Example icon-button with share icon" (click)="toggleFullscreen()">
-        <mat-icon>fullscreen</mat-icon>
-        <mat-icon>fullscreen_exit</mat-icon>
+        <mat-icon *ngIf="!fullscreen.isFullscreen">fullscreen</mat-icon>
+        <mat-icon  *ngIf="fullscreen.isFullscreen">fullscreen_exit</mat-icon>
       </button>
     </mat-toolbar>
   </header>
