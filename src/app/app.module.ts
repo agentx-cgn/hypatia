@@ -4,6 +4,8 @@ import { APP_INITIALIZER, NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxFullscreenModule } from '@ultimate/ngx-fullscreen';
+
 import { MaterialModule } from '@hypatia/core/material.module';
 
 import { I18n, II18n } from '@hypatia/core/i18n.module';
@@ -35,6 +37,7 @@ import { AppComponent } from './app.component';
     AtomsModule,
     CellsModule,
     MaterialModule,
+    NgxFullscreenModule,
   ],
   providers: [
 

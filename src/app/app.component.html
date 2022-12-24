@@ -5,38 +5,48 @@
 
   <header role="heading">
     <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"  (click)="toggle()">
+      <button mat-icon-button aria-label="Example icon-button with menu icon"  (click)="toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>Hypatia</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <button mat-icon-button aria-label="Example icon-button with heart icon">
           <mat-icon>favorite</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <button mat-icon-button aria-label="Example icon-button with heart icon">
+          <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Example icon-button with share icon">
           <mat-icon>share</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Example icon-button with share icon" (click)="window?.location?.reload()">
+          <mat-icon>autorenew</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Example icon-button with share icon" (click)="toggleFullscreen()">
+        <mat-icon>fullscreen</mat-icon>
+        <mat-icon>fullscreen_exit</mat-icon>
       </button>
     </mat-toolbar>
   </header>
 
-  <mat-sidenav-container style="flex-grow: 1;" hasBackdrop="false">
+  <div style="flex-grow: 1;" #navcontainer [ngxFullscreen]="navcontainer" #fullscreen="ngxFullscreen">
+    <mat-sidenav-container hasBackdrop="false" style="height: 100%">
 
-    <mat-sidenav #sidenav [(opened)]="opened" mode="push">
-      <mat-nav-list>
-        <a mat-list-item [routerLink]="'/de/start'"> Start </a>
-        <a mat-list-item [routerLink]="'/de/labor'"> Labor </a>
-        <a mat-list-item [routerLink]="'/de/notfound'"> NotFound </a>
-        <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
-      </mat-nav-list>
-    </mat-sidenav>
+      <mat-sidenav #sidenav [(opened)]="opened" mode="push">
+        <mat-nav-list>
+          <a mat-list-item [routerLink]="'/de/start'"> Start </a>
+          <a mat-list-item [routerLink]="'/de/labor'"> Labor </a>
+          <a mat-list-item [routerLink]="'/de/notfound'"> NotFound </a>
+          <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
+        </mat-nav-list>
+      </mat-sidenav>
 
-    <mat-sidenav-content style="height: 100%">
-      <!-- <div style="height: 200px; background-color: gold;"> -->
+      <mat-sidenav-content>
         <router-outlet></router-outlet>
-      <!-- </div> -->
-    </mat-sidenav-content>
+      </mat-sidenav-content>
 
-  </mat-sidenav-container>
+    </mat-sidenav-container>
+  </div>
 
   <footer style="background-color: goldenrod">
     <hyp-cell-footer></hyp-cell-footer>
