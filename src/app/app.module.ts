@@ -15,6 +15,7 @@ import { CellsModule } from '@hypatia/cells/cells.module';
 import { StartPage } from '@hypatia/pages/start/start.page';
 import { NotfoundPage } from '@hypatia/pages/notfound/notfound.page';
 import { LaborPage } from '@hypatia/pages/labor/labor.page';
+import { SimulationPage } from '@hypatia/pages/simulation/simulation.page';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
     StartPage,
     NotfoundPage,
     LaborPage,
+    SimulationPage,
   ],
   imports: [
     BrowserModule,

@@ -33,7 +33,7 @@ export class NgxFullscreenDirective {
    * Also add a HostBinding to the Element
    */
   @HostBinding('class.is-fullscreen')
-  get isFullscreen(): boolean {
+  get isFullscreen (): boolean {
     return this.doc.fullscreenElement !== null;
   }
 
@@ -41,8 +41,12 @@ export class NgxFullscreenDirective {
    * Register the event listener for `fullscreenchange`
    * and emit the fullscreen state and element up
    */
-  @HostListener('document:fullscreenchange')
-  private onTransition() {
+  // @HostListener('document:fullscreenchange')
+  @HostListener('document:fullscreenchange', ['$event'])
+  @HostListener('document:webkitfullscreenchange', ['$event'])
+  @HostListener('document:mozfullscreenchange', ['$event'])
+  @HostListener('document:MSFullscreenChange', ['$event'])
+  private onTransition (): void {
     const isFullscreen = this.isFullscreen;
     const element = this.doc.fullscreenElement;
     this.transition.emit({ isFullscreen, element });

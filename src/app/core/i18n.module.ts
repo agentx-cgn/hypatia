@@ -88,6 +88,7 @@ export class I18n {
       location.href = newURL;
     }
 
+    debugger;
     console.error('i18n.sanitizeURL', 'Could not process language and path', pathLanguage);
 
     return this.locale;

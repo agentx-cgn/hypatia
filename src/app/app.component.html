@@ -35,6 +35,7 @@
       <mat-sidenav #sidenav [(opened)]="opened" mode="push">
         <mat-nav-list>
           <a mat-list-item [routerLink]="'/de/start'"> Start </a>
+          <a mat-list-item [routerLink]="'/de/simulation'"> Simulation </a>
           <a mat-list-item [routerLink]="'/de/labor'"> Labor </a>
           <a mat-list-item [routerLink]="'/de/notfound'"> NotFound </a>
           <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
