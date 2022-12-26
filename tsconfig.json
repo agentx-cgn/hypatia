@@ -35,7 +35,8 @@
       "@hypatia/cells/*":    ["src/app/cells/*"],
       "@hypatia/atoms/*":    ["src/app/atoms/*"],
       "@hypatia/domain/*":   ["src/app/domain/*"],
-      "@hypatia/services/*": ["src/app/services/*"]
+      "@hypatia/services/*": ["src/app/services/*"],
+      "@app/extern":         ["src/extern/index.ts"],
     }
   },
   "angularCompilerOptions": {
