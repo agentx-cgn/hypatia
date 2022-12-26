@@ -3,7 +3,7 @@ import { APP_CONFIG } from '@hypatia/core/injection-tokens';
 import { IConfig } from '@hypatia/core/interfaces';
 import { DOCUMENT } from '@angular/common';
 
-import { NgxFullscreenDirective } from '@ultimate/ngx-fullscreen';
+import { NgxFullscreenDirective } from '@hypatia/core/ngx-fullscreen.directive';
 
 import { MatSidenav } from '@angular/material/sidenav';
 

@@ -4,7 +4,7 @@ import { APP_INITIALIZER, NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgxFullscreenModule } from '@ultimate/ngx-fullscreen';
+import { NgxFullscreenModule } from '@hypatia/core/ngx-fullscreen.module';
 
 import { MaterialModule } from '@hypatia/core/material.module';
 
