@@ -1,8 +1,10 @@
 import { Component, OnInit, OnChanges, OnDestroy, HostListener, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { AppService } from '@hypatia/core/app.service';
 import { SimulationService } from './simulation.service';
 
+
 @Component({
-  selector: 'hy-page-simulation',
+  selector: 'hyp-page-simulation',
   templateUrl: './simulation.page.html',
   styleUrls: ['./simulation.page.scss']
 })
@@ -12,7 +14,8 @@ export class SimulationPage implements OnInit, OnChanges, OnDestroy, AfterViewIn
 
   constructor (
     private readonly hostElement: ElementRef,
-    public readonly service: SimulationService
+    public readonly service: SimulationService,
+    public readonly appservice: AppService,
   ) {
     // do nothing.
   }
@@ -40,11 +43,8 @@ export class SimulationPage implements OnInit, OnChanges, OnDestroy, AfterViewIn
       const footerStyles = getComputedStyle(document.querySelector('footer')  as HTMLElement );
       const heightHeader = parseInt(headerStyles.height ?? '64', 10);
       const heightFooter = parseInt(footerStyles.height ?? '20', 10);
-      // const styles      = getComputedStyle(this.hostElement.nativeElement as HTMLElement);
-      // const width       = parseInt(styles.width, 10)  - 10;
-      // const height      = parseInt(styles.height, 10) - 10;
-      const width       = -10 + window.innerWidth;
-      const height      = -10 + window.innerHeight - heightHeader - heightFooter;
+      const width       = -0 + window.innerWidth;
+      const height      = -5 + window.innerHeight - heightHeader - heightFooter;
       cvs.style.width   = String(width)  + 'px';
       cvs.style.height  = String(height) + 'px';
       cvs.width         = width;

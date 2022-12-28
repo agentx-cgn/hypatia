@@ -1,16 +1,35 @@
 
-
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button aria-label="Button to toggle side navigation"  (click)="toggleSidenav()">
         <mat-icon>menu</mat-icon>
     </button>
+
     <span>Hypatia</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
+
+    <span class="spacer"></span>
+    <button mat-raised-button aria-label="Button to date time panel"   (click)="toggleDatetime()">
+        <span>{{ appservice.datetime | date: 'yyyy-MM-dd hh:mm' }}</span>
+        <mat-icon>expand_more</mat-icon>
+        <!-- <mat-icon>expand_less</mat-icon> -->
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <span class="spacer"></span>
+
+    <button mat-icon-button aria-label="Button to open settings panel">
+        <mat-icon>settings</mat-icon>
+    </button>
+
+    <button mat-icon-button aria-label="Button to share content">
         <mat-icon>share</mat-icon>
     </button>
+
+    <button mat-icon-button aria-label="Button to reload page" (click)="window?.location?.reload()">
+        <mat-icon>autorenew</mat-icon>
+    </button>
+
+    <button mat-icon-button aria-label="Button to toggle full screen view" (click)="toggleFullscreen()">
+        <mat-icon *ngIf="!appservice.fullscreen?.isFullscreen">fullscreen</mat-icon>
+        <mat-icon  *ngIf="appservice.fullscreen?.isFullscreen">fullscreen_exit</mat-icon>
+    </button>
+
 </mat-toolbar>
 

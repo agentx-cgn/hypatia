@@ -27,6 +27,7 @@
     "rules": {
         "@typescript-eslint/semi": "off",
         "padded-blocks": "off",
+        "accessor-pairs": "off",
         "no-multi-spaces": "off",
         "space-in-parens": "off",
         "@typescript-eslint/no-useless-constructor": "off",

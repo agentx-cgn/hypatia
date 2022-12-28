@@ -3,20 +3,18 @@
 @import "assets/fonts.scss";
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 html, body {
     margin: 0;
     padding: 0;
     background-color: rgb(188, 188, 188);
     background-color: transparent;
     font-size: 16px;
+    height: 100%;
 }
 
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 div.page {
-    // height: 100%;
-    // padding: 1rem; // enforces scrollbar
     &.page-start {
         background-color: rgb(243, 228, 210);
     }
@@ -28,12 +26,10 @@ div.page {
     }
     &.page-simulation {
         background-color: rgb(224, 195, 214);
-        .page {
-            overflow-x: hidden;
-            canvas {
-                width: 100px;
-                height: 100px
-            }
+        overflow-x: hidden;
+        canvas {
+            width: 100px;
+            height: 100px
         }
     }
 }

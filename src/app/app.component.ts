@@ -1,7 +1,8 @@
-import { Component, Inject, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Inject, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { APP_CONFIG } from '@hypatia/core/injection-tokens';
 import { IConfig } from '@hypatia/core/interfaces';
 import { DOCUMENT } from '@angular/common';
+import { AppService } from '@hypatia/core/app.service'
 
 import { NgxFullscreenDirective } from '@hypatia/core/ngx-fullscreen.directive';
 
@@ -25,14 +26,15 @@ export class AppComponent implements AfterViewInit {
 
   private readonly config: IConfig;
 
-  // public title = 'hyp-frontend';
-
-  @ViewChild('sidenav') sidenav: MatSidenav | undefined;
+  @ViewChild('sidenav')    sidenav!:    MatSidenav;
   @ViewChild('fullscreen') fullscreen!: NgxFullscreenDirective;
 
   constructor (
     @Inject(APP_CONFIG) config: IConfig,
-    @Inject(DOCUMENT) private readonly document: Document
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly service: AppService,
+    private readonly cdref: ChangeDetectorRef,
+
   ) {
     this.config = config;
     this.window = this.document.defaultView;
@@ -43,10 +45,14 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit (): void {
+    this.service.sidenav    = this.sidenav;
+    this.service.fullscreen = this.fullscreen;
     this.fullscreen.errors.subscribe((err: string) => {
       // e.g. "Failed to execute 'requestFullscreen' on 'Element'"
       console.log('App.fullscreen.error', err);
     });
+    // triggers hyp-header
+    this.cdref.detectChanges();
   }
 
   toggle (): void {

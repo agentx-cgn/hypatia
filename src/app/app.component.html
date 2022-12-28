@@ -1,32 +1,11 @@
 
 <!-- https://angular.io/guide/route-animations -->
+<!-- https://github.com/thisiszoaib/angular-responsive-sidebar -->
 
 <div style="display: flex; flex-direction: column; height: 100vh">
 
   <header role="heading" style="flex: 0 0 auto; ">
-    <mat-toolbar>
-      <button mat-icon-button aria-label="Example icon-button with menu icon"  (click)="toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Hypatia</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="Example icon-button with heart icon">
-          <mat-icon>settings</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="Example icon-button with share icon" (click)="window?.location?.reload()">
-          <mat-icon>autorenew</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="Example icon-button with share icon" (click)="toggleFullscreen()">
-        <mat-icon *ngIf="!fullscreen.isFullscreen">fullscreen</mat-icon>
-        <mat-icon  *ngIf="fullscreen.isFullscreen">fullscreen_exit</mat-icon>
-      </button>
-    </mat-toolbar>
+    <hyp-cell-header></hyp-cell-header>
   </header>
 
   <div style="flex: 1 1 auto;" #navcontainer [ngxFullscreen]="navcontainer" #fullscreen="ngxFullscreen">

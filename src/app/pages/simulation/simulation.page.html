@@ -1,5 +1,18 @@
 <div class="page page-simulation">
 
+    <mat-expansion-panel [expanded]="appservice.expanded" style="z-index: 5; position: absolute; width: 100%">
+        <!-- <mat-expansion-panel-header>
+            <mat-panel-title>
+            Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+            Currently I am {{ appservice.expanded ? 'open' : 'closed'}}
+            </mat-panel-description>
+        </mat-expansion-panel-header> -->
+        <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+
     <canvas #canvas class="simulation"></canvas>
 
 </div>
