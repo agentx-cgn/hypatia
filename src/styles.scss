@@ -26,4 +26,14 @@ div.page {
     &.page-notfound {
         background-color: rgb(195, 195, 224);
     }
+    &.page-simulation {
+        background-color: rgb(224, 195, 214);
+        .page {
+            overflow-x: hidden;
+            canvas {
+                width: 100px;
+                height: 100px
+            }
+        }
+    }
 }

@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { NgxFullscreenDirective } from '@hypatia/core/ngx-fullscreen.directive';
 
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,8 @@ export class AppComponent implements AfterViewInit {
   public routeLanguage: string | null = null;
   public userLanguage: string | null = null;
 
-  public opened = true;
+  public opened = false;
+  public mode: MatDrawerMode   = 'push';
 
   private readonly config: IConfig;
 
@@ -44,7 +45,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit (): void {
     this.fullscreen.errors.subscribe((err: string) => {
       // e.g. "Failed to execute 'requestFullscreen' on 'Element'"
-      console.log(err);
+      console.log('App.fullscreen.error', err);
     });
   }
 

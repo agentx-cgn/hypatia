@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable accessor-pairs */
 import {
   Directive,
   Inject,
@@ -14,8 +20,8 @@ import { DOCUMENT } from '@angular/common';
  * upon each fullscreen enter/exit transition
  */
 export interface NgxFullscreenTransition {
-  isFullscreen: boolean;
-  element: Element | null;
+  isFullscreen: boolean
+  element: Element | null
 }
 
 @Directive({
@@ -63,7 +69,7 @@ export class NgxFullscreenDirective {
    * <div ngxFullscreen></div>
    */
   @Input()
-  set ngxFullscreen(element: Element | string) {
+  set ngxFullscreen (element: Element | string) {
     if (element instanceof Element) {
       this.element = element;
     } else if (element === '') {
@@ -94,13 +100,13 @@ export class NgxFullscreenDirective {
    * Pass the Document object so we can default to this if needed
    * Either way, we'll use this for our `fullscreenchange` event
    */
-  constructor(@Inject(DOCUMENT) private doc: Document) {}
+  constructor (@Inject(DOCUMENT) private readonly doc: Document) {}
 
   /**
    * Accept an optional Element to enter fullscreen mode
    * Either use this element or the registered `this.element`
    */
-  async enter(element?: Element) {
+  async enter (element?: Element) {
     if (!this.isFullscreen) {
       try {
         await (element || this.element).requestFullscreen();
@@ -115,7 +121,7 @@ export class NgxFullscreenDirective {
    * matter what Element we have chosen to be fullscreen, the
    * way to exit is the same
    */
-  async exit() {
+  async exit () {
     if (this.isFullscreen) {
       try {
         await this.doc.exitFullscreen();
@@ -128,7 +134,7 @@ export class NgxFullscreenDirective {
   /**
    * Simple toggle method to switch between fullscreen mode"
    */
-  toggle(element?: Element) {
+  toggle (element?: Element) {
     if (this.isFullscreen) {
       this.exit();
     } else {
