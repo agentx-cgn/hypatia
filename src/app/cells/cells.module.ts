@@ -8,11 +8,13 @@ import { MaterialModule } from '@hypatia/core/material.module';
 import { AtomsModule } from '@hypatia/atoms/atoms.module';
 import { HeaderCell } from './header/header.cell';
 import { FooterCell } from './footer/footer.cell';
+import { DatetimeCell } from './datetime/datetime.cell';
 
 @NgModule({
   declarations: [
     HeaderCell,
-    FooterCell
+    FooterCell,
+    DatetimeCell
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { FooterCell } from './footer/footer.cell';
   ],
   exports: [
     HeaderCell,
-    FooterCell
+    FooterCell,
+    DatetimeCell
   ]
 })
 export class CellsModule { }

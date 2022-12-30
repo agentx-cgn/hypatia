@@ -9,7 +9,7 @@ export class AppService {
 
   private _sidenav!:    MatSidenav;
   private _fullscreen!: NgxFullscreenDirective;
-  private _expanded = false;
+  private _expanded = true;
 
   private readonly _datetime = new Date();
 

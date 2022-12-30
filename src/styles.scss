@@ -14,6 +14,12 @@ html, body {
 
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// Atomics
+.bold   { font-weight: 800; }
+.tr     { text-align: right; }
+.tc     { text-align: center; }
+.nowrap { white-space: nowrap; }
+
 div.page {
     &.page-start {
         background-color: rgb(243, 228, 210);
@@ -30,6 +36,12 @@ div.page {
         canvas {
             width: 100px;
             height: 100px
+        }
+        .mat-checkbox-frame,
+        .mat-checkbox-background,
+        .mat-checkbox-anim-unchecked-checked,
+        .mat-checkbox-anim-checked-unchecked {
+          transform: scale(2);
         }
     }
 }

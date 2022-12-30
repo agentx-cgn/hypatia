@@ -1,0 +1,57 @@
+<mat-expansion-panel [expanded]="appservice.expanded" style="z-index: 5; position: absolute; width: 100%">
+
+    <div style="display: flex; flex-direction: row; margin-top: 12px">
+
+        <!-- <table class="layers" style="border-spacing: 0; font: 400 14px/20px 'Roboto Mono', monospace; flex-grow: 1">
+            <thead>
+                <tr><th class="tr">Day</th></tr>
+                <tr><th class="tr">Variable</th></tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let layer of layers">
+                    <td class="tr">
+                        <mat-checkbox style="margin: 0" [labelPosition]="'before'">
+                            <span class="nowrap">{{ layer }}</span>
+                        </mat-checkbox>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <div style="overflow-x: auto; flex-shrink: 1;">
+
+            <table class="steps" style="border-spacing: 0; font: 400 14px/20px 'Roboto Mono', monospace; cursor: pointer;">
+                <thead>
+                    <tr>
+                        <th scope="col" class="bold tr">
+                            Days
+                        </th>
+                        <th colspan="4" scope="col"  *ngFor="let day of days" class="bold">
+                            {{ day }}
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="bold tr">
+                            Steps
+                        </th>
+                        <th scope="col"  *ngFor="let step of steps" class="tc" style="padding: 0 6px; font-weight: 400;">
+                            {{ step }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let r of [].constructor(4); let i = index">
+                        <td class="tr">
+                            <span class="nowrap">{{ layers[i] }}</span>
+                        </td>
+                        <td *ngFor="let step of [].constructor(4*10)" class="tc">
+                            <span>M</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</mat-expansion-panel>

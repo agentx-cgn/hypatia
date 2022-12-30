@@ -50,7 +50,7 @@ export class SimulationPage implements OnInit, OnChanges, OnDestroy, AfterViewIn
       cvs.width         = width;
       cvs.height        = height;
       this.service.onResize(width, height);
-      console.log('host.native', this.hostElement.nativeElement)
+      // console.log('host.native', this.hostElement.nativeElement)
     }
   }
 
